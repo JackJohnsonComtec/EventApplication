@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "AdminPass";
+}
+
+<h2>Admin Password</h2>
+
+<content>
+    @using (Html.BeginForm("Admin", "Home", FormMethod.Post))
+    {
+        <form method="post">
+            Please Enter Admin Password:<br />
+            <input type="password" name="password" /><br />
+            
+            <button id="submitbutton" name="submitbutton" onclick="Admin" value="subbutton">Go</button>
+        </form>
+    }
+</content>
+
+

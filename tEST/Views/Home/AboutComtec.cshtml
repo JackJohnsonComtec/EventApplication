@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+
+        div.container {
+            width: 100%;
+        }
+
+        header, footer {
+            padding: 1em;
+            color: white;
+            background-color: cornflowerblue;
+            clear: left;
+            text-align: center;
+        }
+
+        nav {
+            margin: 0;
+            padding: 0;
+        }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+                nav ul a {
+                    text-decoration: none;
+                }
+    </style>
+</head>
+<body>
+    <header>
+        @{
+            ViewData["Title"] = "About";
+        }
+        <h2>@ViewData["Title"]</h2>
+    </header>
+
+    Trading since 1978, we have offices in the UK, Far East and Middle East.<br />
+    Our success lies in our unique approach, from selecting the right product for the right job through to managing entire supply chains.
+    <br />
+    <br />
+    <address>
+        Cardinal Way<br />
+        Cardinal Distribution Park<br />
+        Godmanchester<br />
+        Huntingdon<br />
+        England<br />
+        PE29 2XJ<br /><br />
+        <abbr title="Sales Hotline">P:</abbr>
+        01480 415000
+    </address>
+</body>
+</html>

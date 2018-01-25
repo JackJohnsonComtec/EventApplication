@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Save Details";
+}
+<div class="row">
+
+    <div class="col-md-3">
+        <h2>Thank you for submitting your details!</h2>
+        <ul>
+            <content>
+                <br />
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                {
+                    <form method="post">
+                        <button id="Home" name="Home" onclick="Index()" value="Homebutton">HOME</button>
+                    </form>
+                }
+            </content>
+        </ul>
+    </div>
+</div>

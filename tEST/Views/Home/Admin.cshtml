@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<h2>Admin</h2>
+
+<form method="get">
+    Please Enter Event Name:<br />
+    <input type="text" name="event" /><br /><br />
+    Please Select the Fields you Want to Capture:<br />
+    
+
+    <div>
+        FirstName  :
+        <input type="radio" name="FName" value="On" checked> On
+        <input type="radio" name="FName" value="Off"> Off
+    </div>
+    <div>
+        LastName   :
+        <input type="radio" name="LName" value="On" checked> On
+        <input type="radio" name="LName" value="Off"> Off
+    </div>
+    <div>
+        Company    :
+        <input type="radio" name="Company" value="On" checked> On
+        <input type="radio" name="Company" value="Off"> Off
+    </div>
+    <div>
+        Email      :
+        <input type="radio" name="Email" value="On" checked> On
+        <input type="radio" name="Email" value="Off"> Off
+    </div>
+    <div>
+        PhoneNumber:
+        <input type="radio" name="Phone" value="On" checked> On
+        <input type="radio" name="Phone" value="Off"> Off
+    </div>
+
+    <br /><br />
+    <button id="submitbutton" name="submitbutton" onclick="SetConfig" value="subbutton">Save</button>
+</form>
+

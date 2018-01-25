@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div.container {
+            width: 100%;
+        }
+
+        header {
+            padding: 1em;
+            color: white;
+            background-color: #476cac;
+            clear: left;
+            text-align: center;
+        }
+        footer {
+            padding: 1em;
+            color: white;
+            background-color: #476cac;
+            clear: left;
+            text-align: center;
+        }
+
+
+        nav {
+            margin: 0;
+            padding: 0;
+        }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+                nav ul a {
+                    text-decoration: none;
+                }
+
+        article {
+        }
+
+        .productCheck {
+            text-align: center;
+            padding: 1em;
+        }
+
+        .col-md-3 {
+            text-align: center;
+            width: inherit;
+        }
+
+        .productCheck {
+            font-size: 18px;
+        }
+
+        .checkSetOne {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            padding: 30px;
+            text-align: left;
+            vertical-align: top;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0,0,0,.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            @{
+                ViewData["Title"] = "SignUp";
+            }
+            <h2>@ViewData["Title"]</h2>
+            <h3>@ViewData["Message"]</h3>
+
+
+
+        </header>
+
+
+        <div class="col-md-3">
+            <h2>Your Details Here</h2>
+            <ul>
+                <content>
+                    @using (Html.BeginForm("SaveDetails", "Home", FormMethod.Post))
+                    {
+
+
+                        <div>
+                            <form method="post">
+                                <div>
+                                    First Name:<br />
+                                    <input type="text" name="firstname" /><br />
+                                    Last Name:<br />
+                                    <input type="text" name="lastname" /><br />
+                                    Email Address:<br />
+                                    <input type="text" name="email" /><br />
+                                    Company:<br />
+                                    <input type="text" name="company" /><br />
+                                    Phone Number:<br />
+                                    <input type="number" name="phoneNumber" /><br /><br />
+
+
+                                    <section class="productCheck">
+                                        <h3>
+                                            Products You're Interested In?<br />
+                                        </h3>
+                                        <content>
+                                            <fieldset>
+                                                <div class="checkSetOne">
+                                                    Structured Cabling
+                                                    <input type="checkbox" name="A" runat="server" value="true" />
+                                                    <label for="A"></label>
+                                                </div>
+                                                <div class="checkSetOne">
+                                                    Fibre Optic Cabling
+                                                    <input type="checkbox" name="B" runat="server" />
+                                                    <label for="B"></label>
+                                                </div>
+                                                <div class="checkSetOne">
+                                                    Trunking & Cable Management
+                                                    <input type="checkbox" name="C" runat="server" />
+                                                    <label for="C"></label>
+                                                </div>
+                                                <br />
+                                                <div class="checkSetOne">
+                                                    Voice Cabling
+                                                    <input type="checkbox" name="D" runat="server" />
+                                                    <label for="D"></label>
+                                                </div>
+                                                <div class="checkSetOne">
+                                                    Cabinets & Accessories
+                                                    <input type="checkbox" name="E" runat="server" />
+                                                    <label for="E"></label>
+                                                </div>
+                                                <div class="checkSetOne">
+                                                    Active Equipment
+                                                    <input type="checkbox" name="F" runat="server" />
+                                                    <label for="F"></label>
+                                                </div>
+                                                <br />
+                                                <div class="checkSetOne">
+                                                    Tools
+                                                    <input type="checkbox" name="G" runat="server" />
+                                                    <label for="G"></label>
+                                                </div>
+                                                <div class="checkSetOne">
+                                                    Site Equipment
+                                                    <input type="checkbox" name="H" runat="server" />
+                                                    <label for="H"></label>
+                                                </div>
+                                                <div class="checkSetOne">
+                                                    Fixings & Fastenings
+                                                    <input type="checkbox" name="I" runat="server" />
+                                                    <label for="I"></label>
+                                                </div>
+                                                <br />
+                                                <div class="checkSetOne">
+                                                    Labelling Solutions
+                                                    <input type="checkbox" name="J" runat="server" />
+                                                    <label for="J"></label>
+                                                </div>
+                                                <div class="checkSetOne">
+                                                    External Cabling
+                                                    <input type="checkbox" name="K" runat="server" />
+                                                    <label for="K"></label>
+                                                </div>
+                                                <div class="checkSetOne">
+                                                    Telephony
+                                                    <input type="checkbox" name="L" runat="server" />
+                                                    <label for="L"></label>
+                                                </div>
+                                                <br />
+                                                <div class="checkSetOne">
+                                                    Test & Measurement
+                                                    <input type="checkbox" name="M" runat="server" />
+                                                    <label for="M"></label>
+                                                </div>
+                                                <div class="checkSetOne">
+                                                    Power, Cabling & Accessories
+                                                    <input type="checkbox" name="N" runat="server" />
+                                                    <label for="N"></label>
+                                                </div>
+                                                <div class="checkSetOne">
+                                                    Audio Visual & Coax
+                                                    <input type="checkbox" name="O" runat="server" />
+                                                    <label for="O"></label>
+                                                </div>
+                                            </fieldset>
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <text style="font-size:20px;">Would you like to be entered into our prize draw?</text>
+                                            <input type="checkbox" name="prizeDraw" />
+                                        </content>
+
+
+                                    </section>
+                                </div>
+                                <button style="font-size:25px;" id="submitbutton" name="submitbutton" onclick="SaveDetails()" value="subbutton" runat="server">Submit</button>
+                                <br />
+                                <text style="font-size:10px;">By Pressing Submit you are signing up to recieve marketing content from Comtec Cable Accessories Ltd.</text>
+                            </form>
+                        </div>
+                    }
+                </content>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
