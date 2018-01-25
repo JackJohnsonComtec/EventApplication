@@ -53,10 +53,56 @@ namespace tEST.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public ActionResult SaveDetails(string firstname, string lastname, string company, string email, long phoneNumber,bool A = false, bool B = false,
-            bool C = false, bool D = false, bool E = false, bool F = false, bool G = false, bool H = false, bool I = false, bool J = false, bool K = false,
-            bool L = false, bool M = false, bool N = false, bool O = false)
+        public ActionResult PrizeDraw()
         {
+
+            return View();
+        }
+
+        public ActionResult PrizeDrawEnter(string firstname, string lastname, string company, string email, long phoneNumber) {
+
+            if (firstname == null || lastname == null || company == null || email == null)
+            {
+
+
+                Index();
+                return View("PrizeDraw");
+            }
+
+            Customer cust = new Customer
+            {
+                fname = firstname.Trim(),
+                lname = lastname.Trim(),
+                company = company.Trim(),
+                email = email.Trim(),
+                phone = phoneNumber
+
+
+            };
+            string path;
+            List<string> customerData = new List<string>
+            {
+                "Firstname: " + cust.fname,
+                "Surname: " + cust.lname,
+                "Company: " + cust.company,
+                "Email: " + cust.email,
+                "Phone Number: " + cust.phone.ToString().Trim()
+            };
+
+            path = "C:/ComtecShowApp/ICELIVE/PRIZEDRAW/" + cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
+            System.IO.File.WriteAllLines(path: path, contents: customerData);
+
+            ViewData["Message"] = "Thank you for Signing Up to the Prize Draw!";
+            return View("SaveDetails");
+        }
+
+
+        public ActionResult SaveDetails(string firstname, string lastname, string company, string email, long phoneNumber, bool A = false, bool B = false,
+            bool C = false, bool D = false, bool E = false, bool F = false, bool G = false, bool H = false, bool I = false, bool J = false, bool K = false,
+            bool L = false, bool M = false, bool N = false, bool O = false, bool prizeDraw = false)
+        {
+            
+
             if (firstname == null || lastname == null || company == null || email == null)
             {
 
@@ -72,11 +118,12 @@ namespace tEST.Controllers
                 company = company.Trim(),
                 email = email.Trim(),
                 phone = phoneNumber
-                
-                
+
+
             };
 
-            if (A) {
+            if (A)
+            {
                 cust.products.Add("Structured Cabling");
             }
             if (B)
@@ -135,26 +182,46 @@ namespace tEST.Controllers
             {
                 cust.products.Add("Audio Visual & Coax");
             }
-            
+
+
+
+
             //do stuff here...
 
 
 
-
-            List<string> customerData = new List<string>();
-            customerData.Add("Firstname: " + cust.fname);
-            customerData.Add("Surname: " + cust.lname);
-            customerData.Add("Company: " + cust.company);
-            customerData.Add("Email: " + cust.email);
-            customerData.Add("Phone Number: " + cust.phone.ToString().Trim()); 
+            string path;
+            List<string> customerData = new List<string>
+            {
+                "Firstname: " + cust.fname,
+                "Surname: " + cust.lname,
+                "Company: " + cust.company,
+                "Email: " + cust.email,
+                "Phone Number: " + cust.phone.ToString().Trim()
+            };
             foreach (string s in cust.products)
             {
                 customerData.Add(s);
             }
 
-            string path = "C:/ComtecShowApp/ICELIVE/SIGNUP" + cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
+            if (prizeDraw)
+            {
+                ViewData["Message"] += " \n You have also been entered into our prize draw!";
+                List <string> prizeCustData = new List<string>
+                {
+                    "Firstname: " + cust.fname,
+                    "Surname: " + cust.lname,
+                    "Company: " + cust.company,
+                    "Email: " + cust.email,
+                    "Phone Number: " + cust.phone.ToString().Trim()
+                };
+                path = "C:/ComtecShowApp/ICELIVE/PRIZEDRAW/" + cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
+                System.IO.File.WriteAllLines(path: path, contents: prizeCustData);
+            }
 
+            path = "C:/ComtecShowApp/ICELIVE/SIGNUP/" + cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
             System.IO.File.WriteAllLines(path: path, contents: customerData);
+
 
 
             //SmtpClient cv = new SmtpClient
@@ -178,7 +245,7 @@ namespace tEST.Controllers
             //    cv.Send(message);
             //}
 
-
+            ViewData["Message"] = "Thank you for Submitting your details!";
             return View();
 
         }

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div.container {
+            width: 100%;
+        }
+
+        header {
+            padding: 1em;
+            color: white;
+            background-color: #476cac;
+            clear: left;
+            text-align: center;
+        }
+
+        footer {
+            padding: 1em;
+            color: white;
+            background-color: #476cac;
+            clear: left;
+            text-align: center;
+        }
+
+
+        nav {
+            margin: 0;
+            padding: 0;
+        }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+                nav ul a {
+                    text-decoration: none;
+                }
+
+        article {
+        }
+
+        .productCheck {
+            text-align: center;
+            padding: 1em;
+        }
+
+        .col-md-3 {
+            text-align: center;
+            width: inherit;
+        }
+
+        .productCheck {
+            font-size: 18px;
+        }
+
+        .checkSetOne {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            padding: 30px;
+            text-align: left;
+            vertical-align: top;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0,0,0,.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            @{
+                ViewData["Title"] = "Prize Draw";
+            }
+            <h2>@ViewData["Title"]</h2>
+            <h3>@ViewData["Message"]</h3>
+
+
+
+        </header>
+
+
+        <div class="col-md-3">
+            <h2>Your Details Here</h2>
+            <ul>
+                <content>
+                    @using (Html.BeginForm("SaveDetails", "Home", FormMethod.Post))
+                    {
+
+                        <div>
+                            <form method="post">
+                                <div>
+                                    First Name:<br />
+                                    <input type="text" name="firstname" /><br />
+                                    Last Name:<br />
+                                    <input type="text" name="lastname" /><br />
+                                    Email Address:<br />
+                                    <input type="text" name="email" /><br />
+                                    Company:<br />
+                                    <input type="text" name="company" /><br />
+                                    Phone Number:<br />
+                                    <input type="number" name="phoneNumber" /><br /><br />
+
+                                    <button style="font-size:25px;" id="submitbutton" name="submitbutton" onclick="PrizeDrawEnter()" value="subbutton" runat="server">Submit</button>
+                                    <br />
+                                    <text style="font-size:10px;">By Pressing Submit you are signing up to recieve marketing content from Comtec Cable Accessories Ltd.</text>
+                                </div>
+                            </form>
+                        </div>
+                    }
+                </content>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+@{
+    ViewData["Title"] = "PrizeDraw";
+
+    Layout = "~/Views/Home/SignUp.cshtml";
+}
+<h2>PrizeDraw</h2>
