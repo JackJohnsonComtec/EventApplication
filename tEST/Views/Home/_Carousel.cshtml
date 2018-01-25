@@ -1,4 +1,16 @@
-﻿
+﻿<!DOCTYPE HTML>
+<style>
+    .carousel, .carousel-inner {
+        width: 100%;
+        height: 500px;
+    }
+
+        .carousel-inner img {
+            width: 30%;
+            height: 30%;
+        }
+</style>
+
 @{
     @using System.IO;
 }
@@ -12,17 +24,22 @@
             int i = 0;
             foreach (string s in filePaths)
             {
+
                 if (i == 0)
                 {
-                    <div class="item" active>
-                        <img src="@s" alt="img" class="img-responsive" />
+                    <div class="item active">
+                        <img src="@s" class="img-responsive" />
+                        <div class="carousel-caption">
+                        </div>
                     </div>
                     i++;
                 }
                 else
                 {
-                    <div class="item">
-                        <img src="@s" alt="img" class="img-responsive" />
+                    <div class="item ">
+                        <img src="@s" class="img-responsive" />
+                        <div class="carousel-caption">
+                        </div>
                     </div>
                 }
 
