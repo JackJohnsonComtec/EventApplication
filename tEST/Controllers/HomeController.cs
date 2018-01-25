@@ -56,7 +56,7 @@ namespace tEST.Controllers
         public ActionResult PrizeDraw()
         {
 
-            return View();
+            return View("PrizeDraw");
         }
 
         public IActionResult PrizeDrawEnter(string firstname, string lastname, string company, string email, long phoneNumber) {

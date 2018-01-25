@@ -127,18 +127,20 @@
                 <ul>
                     <content>
 
+
                         <form style="width:100%" class="homeButtons">
                             <br />
                             <input type="button" style="background-color:#476cac; width:550px; height:250px;" value="Comtec" onclick="window.location.href='https://www.comtecdirect.co.uk/'" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            @using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Get))
-                            {
-                                <input type="button" style="background-color:#476cac; width: 550px; height:250px;" value="PrizeDraw" onclick="PrizeDraw()" />
-                                <button id="PrizeDraw"  style="background-color:#476cac; width: 550px; height:250px;" name="PrizeDraw" onclick="PrizeDraw()" value="Prize Draw"/>
-                            }
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="button" style="background-color:#476cac; width: 550px; height:250px;" value="Product Catalog" onclick="window.location.href='https://www.comtecdirect.co.uk/'" />
                         </form>
+
+                        @using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Post))
+                        {
+                                <!---<input type="button" style="background-color:#476cac; width: 550px; height:250px;" value="PrizeDraw" onclick="PrizeDraw()" />-->
+                            <button id="PrizeDraw" style="background-color:#476cac; width: 550px; height:250px;" onclick="PrizeDraw()" value="Prize Draw" />
+                        }
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="button" style="background-color:#476cac; width: 550px; height:250px;" value="Product Catalog" onclick="window.location.href='https://www.comtecdirect.co.uk/'" />
+
 
                     </content>
                 </ul>

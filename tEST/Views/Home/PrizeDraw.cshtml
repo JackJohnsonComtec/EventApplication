@@ -37,40 +37,17 @@
                     text-decoration: none;
                 }
 
-        article {
-        }
-
-        .productCheck {
-            text-align: center;
-            padding: 1em;
-        }
-
         .col-md-3 {
             text-align: center;
             width: inherit;
         }
 
-        .productCheck {
-            font-size: 18px;
-        }
-
-        .checkSetOne {
-            display: inline-block;
-            width: 200px;
-            height: 100px;
-            margin: 10px;
-            padding: 30px;
-            text-align: left;
-            vertical-align: top;
-            background: #fff;
-            box-shadow: 0 5px 10px rgba(0,0,0,.1);
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-
+        
         <header>
             @{
                 ViewData["Title"] = "Prize Draw";
@@ -87,7 +64,7 @@
             <h2>Your Details Here</h2>
             <ul>
                 <content>
-                    @using (Html.BeginForm("SaveDetails", "Home", FormMethod.Post))
+                    @using (Html.BeginForm("PrizeDrawEnter", "Home", FormMethod.Post))
                     {
 
                         <div>
@@ -106,7 +83,7 @@
 
                                     <button style="font-size:25px;" id="submitbutton" name="submitbutton" onclick="PrizeDrawEnter()" value="subbutton" runat="server">Submit</button>
                                     <br />
-                                    <text style="font-size:10px;">By Pressing Submit you are signing up to recieve marketing content from Comtec Cable Accessories Ltd.</text>
+                                    <text style="font-size:10px;">By Pressing Submit you are signing up to a Prize Draw hosted by Comtec Cable Accessories Ltd.</text>
                                 </div>
                             </form>
                         </div>
@@ -120,9 +97,3 @@
 </html>
 
 
-@{
-    ViewData["Title"] = "PrizeDraw";
-
-    Layout = "~/Views/Home/SignUp.cshtml";
-}
-<h2>PrizeDraw</h2>
