@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div.container {
+            width: 100%;
+        }
+        main {
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    <main>
+        <br />
+        <iframe src="http://ultima-comms.com/" name="iframe_a" height="700" style= "width:100%; float:left;"></iframe>
+        <br />
+        
+    </main>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <button id="Home" style=" text-align:center; color:white; background-color:#476cac; width: 550px; height:150px;" onclick="Index()" value="Home"> Home </button>
+    }
+</body>
+</html>

@@ -47,6 +47,12 @@ namespace tEST.Controllers
 
         }
 
+        public ActionResult ComtecWeb()
+        {
+
+            return View("ComtecWeb");
+        }
+
 
         public IActionResult Error()
         {
