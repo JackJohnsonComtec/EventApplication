@@ -59,7 +59,7 @@ namespace tEST.Controllers
             return View();
         }
 
-        public ActionResult PrizeDrawEnter(string firstname, string lastname, string company, string email, long phoneNumber) {
+        public IActionResult PrizeDrawEnter(string firstname, string lastname, string company, string email, long phoneNumber) {
 
             if (firstname == null || lastname == null || company == null || email == null)
             {

@@ -13,14 +13,14 @@
         header, footer {
             padding: 1em;
             color: black;
-            background-color:white;
+            background-color: white;
             clear: left;
             text-align: center;
-            align-content:center;
+            align-content: center;
         }
+
         .divider {
             width: 5px;
-
         }
 
         main {
@@ -29,13 +29,12 @@
         .carousel {
             position: center;
         }
+
         .homeButton {
-        
-            display:inline;
-        
+            display: inline;
         }
-        
-        
+
+
         nav {
             margin: 0;
             padding: 0;
@@ -127,15 +126,20 @@
             <div class="col-md-3" style="width:100%">
                 <ul>
                     <content>
+
                         <form style="width:100%" class="homeButtons">
                             <br />
                             <input type="button" style="background-color:#476cac; width:550px; height:250px;" value="Comtec" onclick="window.location.href='https://www.comtecdirect.co.uk/'" />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="button" style="background-color:#476cac; width: 550px; height:250px;" value="PrizeDraw" runat="server" onserverclick="PrizeDraw()" />
-                            <!--<button id="PrizeDraw"  style="background-color:#476cac; width: 550px; height:250px;" name="PrizeDraw" onclick="PrizeDraw()" value="Prize Draw"/>-->
+                            @using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Get))
+                            {
+                                <input type="button" style="background-color:#476cac; width: 550px; height:250px;" value="PrizeDraw" onclick="PrizeDraw()" />
+                                <button id="PrizeDraw"  style="background-color:#476cac; width: 550px; height:250px;" name="PrizeDraw" onclick="PrizeDraw()" value="Prize Draw"/>
+                            }
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input type="button" style="background-color:#476cac; width: 550px; height:250px;" value="Product Catalog" onclick="window.location.href='https://www.comtecdirect.co.uk/'" />
                         </form>
+
                     </content>
                 </ul>
             </div>
@@ -144,11 +148,7 @@
 
     </div>
     <main>
-       
+
     </main>
 </body>
 </html>
-
-
-
-
