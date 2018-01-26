@@ -6,8 +6,9 @@
     }
 
         .carousel-inner img {
-            width: 30%;
+            width: 25%;
             height: 30%;
+            margin:auto;
         }
 </style>
 
@@ -21,18 +22,19 @@
             string path = @"C:/Users/jjohnson/source/repos/tEST/tEST/wwwroot/images/NewFolder/";
             string[] filePaths = Directory.GetFiles(path, "*.jpg");
 
-            int i = 0;
+            Random rnd = new Random();
+
+            int i = rnd.Next(1, filePaths.Length);
             foreach (string s in filePaths)
             {
 
-                if (i == 0)
+                if (s == filePaths[i])
                 {
                     <div class="item active">
                         <img src="@s" class="img-responsive" />
                         <div class="carousel-caption">
                         </div>
                     </div>
-                    i++;
                 }
                 else
                 {

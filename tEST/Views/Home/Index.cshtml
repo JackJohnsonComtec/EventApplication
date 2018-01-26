@@ -48,8 +48,8 @@
             list-style-type: none;
             padding: 0;
         }
- 
-        
+
+
 
             nav ul a {
                 text-decoration: none;
@@ -62,10 +62,8 @@
     <div class="container">
 
         <br />
-        <header>
             @Html.Partial("_Carousel")
-        </header>
-
+        <br />
 
         <div class="row">
 
@@ -75,20 +73,20 @@
 
                         <section style="display:inline-flex;">
                             <br />
+
                             @using (Html.BeginForm("ComtecWeb", "Home", FormMethod.Post))
                             {
-                                <button id="Website" style="background-color:#476cac; width: 550px; height:250px;" onclick="ComtecWeb()" value="Website">Comtec Website</button>
+                                <button id="Website" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="ComtecWeb()" value="Website">Comtec Website</button>
                             }
-                            &emsp;&emsp;&emsp;&emsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Post))
                             {
-                                <!---<input type="button" style="background-color:#476cac; width: 550px; height:250px;" value="PrizeDraw" onclick="PrizeDraw()" />-->
-                                <button id="PrizeDraw" style="background-color:#476cac; width: 550px; height:250px;" onclick="PrizeDraw()" value="Prize Draw">Prize Draw</button>
+                                <button id="PrizeDraw" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="PrizeDraw()" value="Prize Draw">Prize Draw</button>
                             }
-                            &emsp;&emsp;&emsp;&emsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
                             {
-                                <button id="SignUp" style="background-color:#476cac; width: 550px; height:250px;" onclick="SignUP()" value="Sign Up for a Catalogue!">Sign up for a catalogue</button>
+                                <button id="SignUp" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="SignUP()" value="Sign Up for a Catalogue!">Sign up for a catalogue</button>
                             }
                         </section>
 

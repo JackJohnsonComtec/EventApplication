@@ -41,23 +41,25 @@
             text-align: center;
             width: inherit;
         }
-
     </style>
 </head>
 <body>
 
     <div class="container">
-        
+        <br />
+        @Html.Partial("_Carousel")
         <header>
             @{
                 ViewData["Title"] = "Prize Draw";
             }
+
             <h2>@ViewData["Title"]</h2>
             <h3>@ViewData["Message"]</h3>
 
 
 
         </header>
+
 
 
         <div class="col-md-3">
@@ -70,16 +72,69 @@
                         <div>
                             <form method="post">
                                 <div>
-                                    First Name:<br />
-                                    <input type="text" name="firstname" /><br />
-                                    Last Name:<br />
-                                    <input type="text" name="lastname" /><br />
-                                    Email Address:<br />
-                                    <input type="text" name="email" /><br />
-                                    Company:<br />
-                                    <input type="text" name="company" /><br />
-                                    Phone Number:<br />
-                                    <input type="number" name="phoneNumber" /><br /><br />
+
+                                    <div>
+
+                                        <div style="margin-left: 33%;">
+                                            <div style="float:none">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            <label>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                First Name:
+                                                                <input type="text" name="firstname" required />
+                                                            </label>
+                                                        </td>
+                                                        <td>
+                                                            <label>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                Last Name:
+                                                                <input type="text" name="lastname" required />
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <label>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                Company:
+                                                                <input type="text" name="company" required />
+                                                            </label>
+                                                        </td>
+                                                        <td>
+                                                            <label>
+                                                                &nbsp;&nbsp;
+                                                                Phone Number:
+                                                                <input type="number" name="phoneNumber" required />
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <label>
+
+                                                                Email Address:
+                                                                <input type="text" name="email" required />
+                                                            </label>
+                                                        </td>
+
+                                                        <td>
+                                                            <label>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                Industry:
+                                                                <input type="text" name="industry" required />
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        
+                                    </div>
 
                                     <button style="font-size:25px;" id="submitbutton" name="submitbutton" onclick="PrizeDrawEnter()" value="subbutton" runat="server">Submit</button>
                                     <br />

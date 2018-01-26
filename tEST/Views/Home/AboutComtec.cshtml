@@ -3,7 +3,6 @@
 <head>
     <style>
         body {
-            background-color: aliceblue;
         }
 
         div.container {
@@ -12,8 +11,8 @@
 
         header, footer {
             padding: 1em;
-            color: white;
-            background-color: cornflowerblue;
+            color: black;
+            background-color: white;
             clear: left;
             text-align: center;
         }
@@ -38,22 +37,28 @@
         @{
             ViewData["Title"] = "About";
         }
+
+        @Html.Partial("_Carousel")
         <h2>@ViewData["Title"]</h2>
     </header>
 
-    Trading since 1978, we have offices in the UK, Far East and Middle East.<br />
-    Our success lies in our unique approach, from selecting the right product for the right job through to managing entire supply chains.
-    <br />
-    <br />
-    <address>
-        Cardinal Way<br />
-        Cardinal Distribution Park<br />
-        Godmanchester<br />
-        Huntingdon<br />
-        England<br />
-        PE29 2XJ<br /><br />
-        <abbr title="Sales Hotline">P:</abbr>
-        01480 415000
-    </address>
+    <div style="margin:33%; width:100%; float:left;">
+        <text>
+            Trading since 1978, we have offices in the UK, Far East and Middle East.<br />
+            Our success lies in our unique approach, from selecting the right product for the right job through to managing entire supply chains.
+        </text>
+        <br />
+        <br />
+        <address style="margin:auto;">
+            Cardinal Way<br />
+            Cardinal Distribution Park<br />
+            Godmanchester<br />
+            Huntingdon<br />
+            England<br />
+            PE29 2XJ<br /><br />
+            <abbr title="Sales Hotline">P:</abbr>
+            01480 415000
+        </address>
+    </div>
 </body>
 </html>

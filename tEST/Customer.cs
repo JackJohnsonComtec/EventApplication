@@ -13,6 +13,7 @@ namespace tEST
         public string company;
         public string email;
         public long phone;
+        public string industry;
         public List<string> products = new List<string>();
 
     }

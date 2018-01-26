@@ -71,10 +71,13 @@
 
     <div class="container">
 
+        <br />
+        @Html.Partial("_Carousel")
         <header>
             @{
                 ViewData["Title"] = "SignUp";
             }
+
             <h2>@ViewData["Title"]</h2>
             <h3>@ViewData["Message"]</h3>
 
@@ -89,22 +92,66 @@
                 <content>
                     @using (Html.BeginForm("SaveDetails", "Home", FormMethod.Post))
                     {
-
-
                         <div>
-                            <form method="post">
+                            <form method="post" class="myForm">
                                 <div>
-                                    First Name:<br />
-                                    <input type="text" name="firstname" /><br />
-                                    Last Name:<br />
-                                    <input type="text" name="lastname" /><br />
-                                    Email Address:<br />
-                                    <input type="text" name="email" /><br />
-                                    Company:<br />
-                                    <input type="text" name="company" /><br />
-                                    Phone Number:<br />
-                                    <input type="number" name="phoneNumber" /><br /><br />
+                                    <div style="margin-left: 33%;">
+                                        <div style="float:none">
+                                            <table>
+                                                    <tr>
+                                                        <td>
+                                                            <label>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                First Name:
+                                                                <input type="text" name="firstname" required />
+                                                            </label>
+                                                        </td>
+                                                        <td>
+                                                            <label>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                Last Name:
+                                                                <input type="text" name="lastname" required />
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                                
+                                                    <tr>
+                                                        <td>
+                                                            <label>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                Company:
+                                                                <input type="text" name="company" required />
+                                                            </label>
+                                                        </td>
+                                                        <td>
+                                                            <label>
+                                                                &nbsp;&nbsp;
+                                                                Phone Number:
+                                                                <input type="number" name="phoneNumber" required />
+                                                            </label>
+                                                        </td>
+                                                    </tr>
 
+                                                    <tr>
+                                                        <td>
+                                                            <label>
+
+                                                                Email Address:
+                                                                <input type="text" name="email" required />
+                                                            </label>
+                                                        </td>
+                                                    
+                                                        <td>
+                                                            <label>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                Industry:
+                                                                <input type="text" name="industry" required />
+                                                            </label>
+                                                        </td>
+                                                    </tr>
+                                            </table>
+                                        </div>
+                                    </div>
 
                                     <section class="productCheck">
                                         <h3>
@@ -127,7 +174,6 @@
                                                     <input type="checkbox" name="C" runat="server" value="true" />
                                                     <label for="C"></label>
                                                 </div>
-                                                <br />
                                                 <div class="checkSetOne">
                                                     Voice Cabling
                                                     <input type="checkbox" name="D" runat="server" value="true" />
@@ -138,12 +184,12 @@
                                                     <input type="checkbox" name="E" runat="server" value="true" />
                                                     <label for="E"></label>
                                                 </div>
+                                                <br />
                                                 <div class="checkSetOne">
                                                     Active Equipment
                                                     <input type="checkbox" name="F" runat="server" value="true" />
                                                     <label for="F"></label>
                                                 </div>
-                                                <br />
                                                 <div class="checkSetOne">
                                                     Tools
                                                     <input type="checkbox" name="G" runat="server" value="true" />
@@ -159,12 +205,12 @@
                                                     <input type="checkbox" name="I" runat="server" value="true" />
                                                     <label for="I"></label>
                                                 </div>
-                                                <br />
                                                 <div class="checkSetOne">
                                                     Labelling Solutions
                                                     <input type="checkbox" name="J" runat="server" value="true" />
                                                     <label for="J"></label>
                                                 </div>
+                                                <br />
                                                 <div class="checkSetOne">
                                                     External Cabling
                                                     <input type="checkbox" name="K" runat="server" value="true" />
@@ -175,7 +221,6 @@
                                                     <input type="checkbox" name="L" runat="server" value="true" />
                                                     <label for="L"></label>
                                                 </div>
-                                                <br />
                                                 <div class="checkSetOne">
                                                     Test & Measurement
                                                     <input type="checkbox" name="M" runat="server" value="true" />
@@ -194,10 +239,10 @@
                                             </fieldset>
                                             <br />
                                             <br />
-                                            <br />
-                                            <br />
                                             <text style="font-size:20px;">Would you like to be entered into our prize draw?</text>
                                             <input type="checkbox" name="prizeDraw" runat="server" value="true" />
+                                            <br />
+                                            <br />
                                         </content>
 
 
@@ -216,4 +261,3 @@
 
 </body>
 </html>
-

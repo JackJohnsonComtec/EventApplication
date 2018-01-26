@@ -65,7 +65,8 @@ namespace tEST.Controllers
             return View("PrizeDraw");
         }
 
-        public IActionResult PrizeDrawEnter(string firstname, string lastname, string company, string email, long phoneNumber) {
+        public IActionResult PrizeDrawEnter(string firstname, string lastname, string company, string email, long phoneNumber, string industry)
+        {
 
             if (firstname == null || lastname == null || company == null || email == null)
             {
@@ -81,7 +82,8 @@ namespace tEST.Controllers
                 lname = lastname.Trim(),
                 company = company.Trim(),
                 email = email.Trim(),
-                phone = phoneNumber
+                phone = phoneNumber,
+                industry = industry.Trim()
 
 
             };
@@ -92,7 +94,8 @@ namespace tEST.Controllers
                 "Surname: " + cust.lname,
                 "Company: " + cust.company,
                 "Email: " + cust.email,
-                "Phone Number: " + cust.phone.ToString().Trim()
+                "Phone Number: " + cust.phone.ToString().Trim(),
+                "Industry: " + cust.industry
             };
 
             path = "C:/ComtecShowApp/ICELIVE/PRIZEDRAW/" + cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
@@ -103,11 +106,11 @@ namespace tEST.Controllers
         }
 
 
-        public ActionResult SaveDetails(string firstname, string lastname, string company, string email, long phoneNumber, bool A = false, bool B = false,
+        public ActionResult SaveDetails(string firstname, string lastname, string company, string email, long phoneNumber, string industry, bool A = false, bool B = false,
             bool C = false, bool D = false, bool E = false, bool F = false, bool G = false, bool H = false, bool I = false, bool J = false, bool K = false,
             bool L = false, bool M = false, bool N = false, bool O = false, bool prizeDraw = false)
         {
-            
+
 
             if (firstname == null || lastname == null || company == null || email == null)
             {
@@ -123,71 +126,88 @@ namespace tEST.Controllers
                 lname = lastname.Trim(),
                 company = company.Trim(),
                 email = email.Trim(),
-                phone = phoneNumber
+                phone = phoneNumber,
+                industry = industry.Trim()
 
 
             };
-
+            bool intFlag = false;
             if (A)
             {
                 cust.products.Add("Structured Cabling");
+                intFlag = true;
             }
             if (B)
             {
                 cust.products.Add("Fibre Optic Cabling");
+                intFlag = true;
             }
             if (C)
             {
                 cust.products.Add("Trunking & Cable Management");
+                intFlag = true;
             }
             if (D)
             {
                 cust.products.Add("Voice Cabling");
+                intFlag = true;
             }
             if (E)
             {
                 cust.products.Add("Cabinets & Accessories");
+                intFlag = true;
             }
             if (F)
             {
                 cust.products.Add("Active Equipment");
+                intFlag = true;
             }
             if (G)
             {
                 cust.products.Add("Tools");
+                intFlag = true;
             }
             if (H)
             {
                 cust.products.Add("Site Equipment");
+                intFlag = true;
             }
             if (I)
             {
                 cust.products.Add("Fixings & Fastenings");
+                intFlag = true;
             }
             if (J)
             {
                 cust.products.Add("Labelling Solutions");
+                intFlag = true;
             }
             if (K)
             {
                 cust.products.Add("External Cabling");
+                intFlag = true;
             }
             if (L)
             {
                 cust.products.Add("Telephony");
+                intFlag = true;
             }
             if (M)
             {
                 cust.products.Add("Test & Measurement");
+                intFlag = true;
             }
             if (N)
             {
                 cust.products.Add("Power, Cabling & Accessories");
+                intFlag = true;
             }
             if (O)
             {
                 cust.products.Add("Audio Visual & Coax");
+                intFlag = true;
             }
+
 
 
 
@@ -203,8 +223,10 @@ namespace tEST.Controllers
                 "Surname: " + cust.lname,
                 "Company: " + cust.company,
                 "Email: " + cust.email,
-                "Phone Number: " + cust.phone.ToString().Trim()
+                "Phone Number: " + cust.phone.ToString().Trim(),
+                "Industry: " + cust.industry
             };
+            if (intFlag) customerData.Add("\nInterested in the following products: \n");
             foreach (string s in cust.products)
             {
                 customerData.Add(s);
@@ -213,13 +235,14 @@ namespace tEST.Controllers
             if (prizeDraw)
             {
                 ViewData["Message"] += " \n You have also been entered into our prize draw!";
-                List <string> prizeCustData = new List<string>
+                List<string> prizeCustData = new List<string>
                 {
                     "Firstname: " + cust.fname,
                     "Surname: " + cust.lname,
                     "Company: " + cust.company,
                     "Email: " + cust.email,
-                    "Phone Number: " + cust.phone.ToString().Trim()
+                    "Phone Number: " + cust.phone.ToString().Trim(),
+                    "Industry: " + cust.industry
                 };
                 path = "C:/ComtecShowApp/ICELIVE/PRIZEDRAW/" + cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
                 System.IO.File.WriteAllLines(path: path, contents: prizeCustData);
