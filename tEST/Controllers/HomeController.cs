@@ -33,7 +33,7 @@ namespace tEST.Controllers
 
         public IActionResult SignUp()
         {
-            ViewData["Message"] = "Sign Up to Comtec For a Catalogue.";
+            ViewData["Message"] = "to Comtec For a Catalogue.";
 
             return View();
         }

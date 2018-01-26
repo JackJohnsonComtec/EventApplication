@@ -13,6 +13,17 @@
             clear: left;
             text-align: center;
         }
+        label {
+        
+            float:right;
+        
+        }
+        input {
+        
+            display:inline-block;
+            float:right;
+        
+        }
 
         footer {
             padding: 1em;
@@ -64,6 +75,7 @@
 
         <div class="col-md-3">
             <h2>Your Details Here</h2>
+            <br />
             <ul>
                 <content>
                     @using (Html.BeginForm("PrizeDrawEnter", "Home", FormMethod.Post))
@@ -81,16 +93,15 @@
                                                     <tr>
                                                         <td>
                                                             <label>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;
                                                                 First Name:
-                                                                <input type="text" name="firstname" required />
+                                                                <input type="text" name="firstname" required autocomplete="off" />
                                                             </label>
                                                         </td>
                                                         <td>
                                                             <label>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                &nbsp;&nbsp;&nbsp;
                                                                 Last Name:
-                                                                <input type="text" name="lastname" required />
+                                                                <input type="text" name="lastname" required autocomplete="off" />
                                                             </label>
                                                         </td>
                                                     </tr>
@@ -98,16 +109,15 @@
                                                     <tr>
                                                         <td>
                                                             <label>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                                 Company:
-                                                                <input type="text" name="company" required />
+                                                                <input type="text" name="company" required autocomplete="off"/>
                                                             </label>
                                                         </td>
                                                         <td>
                                                             <label>
-                                                                &nbsp;&nbsp;
+                                                                &nbsp;&nbsp;&nbsp;
                                                                 Phone Number:
-                                                                <input type="number" name="phoneNumber" required />
+                                                                <input type="tel" name="phoneNumber" required pattern="^[0]\d{9,}$" autocomplete="off"/>
                                                             </label>
                                                         </td>
                                                     </tr>
@@ -117,21 +127,22 @@
                                                             <label>
 
                                                                 Email Address:
-                                                                <input type="text" name="email" required />
+                                                                <input type="email" name="email" required autocomplete="off"/>
                                                             </label>
                                                         </td>
 
                                                         <td>
                                                             <label>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                &nbsp;&nbsp;&nbsp;
                                                                 Industry:
-                                                                <input type="text" name="industry" required />
+                                                                <input type="text" name="industry" required autocomplete="off"/>
                                                             </label>
                                                         </td>
                                                     </tr>
                                                 </table>
                                             </div>
                                         </div>
+                                        <br />
                                         <br />
                                         
                                     </div>

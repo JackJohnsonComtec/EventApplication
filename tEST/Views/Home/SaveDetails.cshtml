@@ -1,21 +1,59 @@
-﻿@{
-    ViewData["title"] = "Save Details";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+        }
 
-<div class="row">
+        div.container {
+            width: 100%;
+        }
 
-    <div class="col-md-3">
-        <h2>@ViewData["Message"]</h2>
-        <ul>
-            <content>
-                <br />
-                @using (Html.BeginForm("Index", "Home", FormMethod.Post))
-                {
-                    <form method="post">
-                        <button id="Home" name="Home" onclick="Index()" value="Homebutton">HOME</button>
-                    </form>
+        header, footer {
+            padding: 1em;
+            color: black;
+            background-color: white;
+            clear: left;
+            text-align: center;
+        }
+
+        nav {
+            margin: 0;
+            padding: 0;
+        }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+                nav ul a {
+                    text-decoration: none;
                 }
-            </content>
-        </ul>
+    </style>
+</head>
+<body>
+    <header>
+        @{
+            ViewData["Title"] = "";
+        }
+        <text style="font-size:40px;">@ViewData["Message"]</text>
+    </header>
+
+    <div style="width:100%; float:none; text-align:center;">
+        <br />
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            <form method="post">
+                <button id="Home" name="Home" onclick="Index()" value="Homebutton">HOME</button>
+            </form>
+        }
     </div>
-</div>
+</body>
+</html>
+
+
+        
+
+                
+

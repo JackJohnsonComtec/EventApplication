@@ -53,17 +53,29 @@
         .productCheck {
             font-size: 18px;
         }
-
+        h2 {
+        
+            text-align:center;
+        
+        }
         .checkSetOne {
             display: inline-block;
-            width: 200px;
+            width: 300px;
             height: 100px;
-            margin: 10px;
+            margin: 5px;
             padding: 30px;
-            text-align: left;
+            text-align: center;
             vertical-align: top;
             background: #fff;
             box-shadow: 0 5px 10px rgba(0,0,0,.1);
+        }
+        label {
+            float: right;
+        }
+
+        input {
+            display: inline-block;
+            float: right;
         }
     </style>
 </head>
@@ -98,57 +110,55 @@
                                     <div style="margin-left: 33%;">
                                         <div style="float:none">
                                             <table>
-                                                    <tr>
-                                                        <td>
-                                                            <label>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                First Name:
-                                                                <input type="text" name="firstname" required />
-                                                            </label>
-                                                        </td>
-                                                        <td>
-                                                            <label>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                Last Name:
-                                                                <input type="text" name="lastname" required />
-                                                            </label>
-                                                        </td>
-                                                    </tr>
-                                                
-                                                    <tr>
-                                                        <td>
-                                                            <label>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                Company:
-                                                                <input type="text" name="company" required />
-                                                            </label>
-                                                        </td>
-                                                        <td>
-                                                            <label>
-                                                                &nbsp;&nbsp;
-                                                                Phone Number:
-                                                                <input type="number" name="phoneNumber" required />
-                                                            </label>
-                                                        </td>
-                                                    </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>
+                                                            First Name:
+                                                            <input type="text" name="firstname" required autocomplete="off"/>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            &nbsp;&nbsp;&nbsp;
+                                                            Last Name:
+                                                            <input type="text" name="lastname" required autocomplete="off"/>
+                                                        </label>
+                                                    </td>
+                                                </tr>
 
-                                                    <tr>
-                                                        <td>
-                                                            <label>
+                                                <tr>
+                                                    <td>
+                                                        <label>
+                                                            Company:
+                                                            <input type="text" name="company" required autocomplete="off"/>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label>
+                                                            &nbsp;&nbsp;&nbsp;
+                                                            Phone Number:
+                                                            <input type="tel" name="phoneNumber" required pattern="[0]\d{9,}" autocomplete="off" />
+                                                        </label>
+                                                    </td>
+                                                </tr>
 
-                                                                Email Address:
-                                                                <input type="text" name="email" required />
-                                                            </label>
-                                                        </td>
-                                                    
-                                                        <td>
-                                                            <label>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                                Industry:
-                                                                <input type="text" name="industry" required />
-                                                            </label>
-                                                        </td>
-                                                    </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label>
+
+                                                            Email Address:
+                                                            <input type="email" name="email" required autocomplete="off"/>
+                                                        </label>
+                                                    </td>
+
+                                                    <td>
+                                                        <label>
+                                                            &nbsp;&nbsp;&nbsp;
+                                                            Industry:
+                                                            <input type="text" name="industry" required autocomplete="off"/>
+                                                        </label>
+                                                    </td>
+                                                </tr>
                                             </table>
                                         </div>
                                     </div>
