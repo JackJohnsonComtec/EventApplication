@@ -226,7 +226,12 @@ namespace tEST.Controllers
                 "Phone Number: " + cust.phone.ToString().Trim(),
                 "Industry: " + cust.industry
             };
-            if (intFlag) customerData.Add("\nInterested in the following products: \n");
+            if (intFlag)
+            {
+                customerData.Add("");
+                customerData.Add("Interested in the following products:");
+                customerData.Add("");
+            }
             foreach (string s in cust.products)
             {
                 customerData.Add(s);
