@@ -19,19 +19,28 @@
 
     <div class="carousel-inner" role="listbox">
         @{
-            string path = "C:/Users/jjohnson/source/repos/EventApplication/tEST/wwwroot/images/NewFolder";
+            string path = "C:/Users/jjohnson/Documents/ComtecDataCollection/EventApplication/tEST/wwwroot/images";
             string[] filePaths = Directory.GetFiles(path, "*.png");
+            List<string> fileNames = new List<string>();
+
+            foreach (string fileN in filePaths)
+            {
+                string n = System.IO.Path.GetFileName(fileN);
+                fileNames.Add(n);
+
+            }
 
             Random rnd = new Random();
 
             int i = rnd.Next(1, filePaths.Length);
-            foreach (string s in filePaths)
+            foreach (string s in fileNames)
             {
 
-                if (s == filePaths[i])
+
+                if (s == fileNames[i])
                 {
                     <div class="item active">
-                        <img src="@s" class="img-responsive" />
+                        <img src="~/images/@s" class="img-responsive" />
                         <div class="carousel-caption">
                         </div>
                     </div>
@@ -39,7 +48,7 @@
                 else
                 {
                     <div class="item ">
-                        <img src="@s" class="img-responsive" />
+                        <img src="~/images/@s" class="img-responsive" />
                         <div class="carousel-caption">
                         </div>
                     </div>
