@@ -8,11 +8,7 @@ namespace tEST
     public class DataColOptions
     {
 
-        bool firstName;
-        bool lastName;
-        bool company;
-        bool email;
-        bool phoneNumber;
+       
 
     }
 }

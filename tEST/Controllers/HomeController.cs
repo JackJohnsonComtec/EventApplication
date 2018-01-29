@@ -14,9 +14,7 @@ namespace tEST.Controllers
 {
     public class HomeController : Controller
     {
-        string theEvent;
-        string folderLocation;
-        string configFile;
+        
         DataColOptions dco = new DataColOptions();
 
 
