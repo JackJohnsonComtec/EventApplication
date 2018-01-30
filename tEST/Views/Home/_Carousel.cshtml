@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE HTML>
+<environment include="Development"></environment>
 <style>
     .carousel, .carousel-inner {
         width: 100%;
@@ -19,7 +20,7 @@
 
     <div class="carousel-inner" role="listbox">
         @{
-            string path = "C:/Users/jjohnson/Documents/ComtecDataCollection/EventApplication/tEST/wwwroot/images";
+            string path = "C:/www/comtecevents.co.uk/wwwroot/images";
             string[] filePaths = Directory.GetFiles(path, "*.png");
             List<string> fileNames = new List<string>();
 

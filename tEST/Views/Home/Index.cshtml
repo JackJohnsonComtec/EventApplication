@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <style>
         body {
@@ -62,7 +63,7 @@
     <div class="container">
 
         <br />
-            @Html.Partial("_Carousel")
+        @Html.Partial("_Carousel")
         <br />
 
         <div class="row">
@@ -79,10 +80,11 @@
                                 <button id="Website" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="ComtecWeb()" value="Website">Comtec Catalogue</button>
                             }
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            @using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Post))
+                            @*@using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Post))
                             {
                                 <button id="PrizeDraw" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="PrizeDraw()" value="Prize Draw">Prize Draw</button>
-                            }
+                            }*@
+                            <img src="~/images/Nexxia/nexxia-audio-solutions-logo.png" width="550" height="250"/>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
                             {
