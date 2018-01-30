@@ -22,6 +22,10 @@
             align-content: center;
         }
 
+        .buttonOfHome {
+            width: 100%;
+        }
+
         .divider {
             width: 5px;
         }
@@ -75,27 +79,22 @@
 
             <div class="col-md-3">
                 <ul>
-                    <content>
-                        <section style="display:flex; margin:auto;">
-                            <br />
+                    <content style="display:inline-flex; position:center; margin:auto;">
+                        <br />
 
-                            @using (Html.BeginForm("ComtecWeb", "Home", FormMethod.Post))
+                        @using (Html.BeginForm("ComtecWeb", "Home", FormMethod.Post))
+                        {
+                            <button id="Website" class="buttonOfHome" style="background-color:#476cac; width: 550px; height:250px; resize:both; color:white;" onclick="ComtecWeb()" value="Website">Comtec Catalogue</button>
+                        }
+                        @*@using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Post))
                             {
-                                <button id="Website" style="background-color:#476cac; width: 550px; height:250px; resize:both; color:white;" onclick="ComtecWeb()" value="Website">Comtec Catalogue</button>
-                            }
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            @*@using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Post))
-                                {
-                                    <button id="PrizeDraw" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="PrizeDraw()" value="Prize Draw">Prize Draw</button>
-                                }*@
-                            <img src="~/images/Nexxia/nexxia-audio-solutions-logo.png" width="550" height="250" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
-                            {
-                                <button id="SignUp" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="SignUP()" value="Sign Up for a Catalogue!">Sign up for a catalogue</button>
-                            }
-                        </section>
-
+                                <button id="PrizeDraw" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="PrizeDraw()" value="Prize Draw">Prize Draw</button>
+                            }*@
+                        <img class="buttonOfHome" src="~/images/Nexxia/nexxia-audio-solutions-logo.png" width="550" height="250" />
+                        @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+                        {
+                            <button id="SignUp" class="buttonOfHome" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="SignUP()" value="Sign Up for a Catalogue!">Sign up for a catalogue</button>
+                        }
                     </content>
                 </ul>
             </div>
