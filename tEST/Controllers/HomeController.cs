@@ -96,13 +96,10 @@ namespace tEST.Controllers
                 "Industry: " + cust.industry
             };
 
-            path = "C:/ComtecShowApp/ICELIVE/PRIZEDRAW/" + cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
-
-            if (!System.IO.File.Exists(path))
-            {
-                FileStream fs = System.IO.File.Create(path);
-            }
-            System.IO.File.WriteAllLines(path: path, contents: customerData);
+            path = "C:/ComtecShowApp/ICELIVE/PRIZEDRAW/";
+            System.IO.Directory.CreateDirectory(path);
+            string ppath = cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
+            System.IO.File.WriteAllLines(path: path + ppath, contents: customerData);
 
             ViewData["Message"] = "Thank you for Signing Up to the Prize Draw!";
             return View("SaveDetails");
@@ -252,20 +249,17 @@ namespace tEST.Controllers
                     "Phone Number: " + cust.phone.ToString().Trim(),
                     "Industry: " + cust.industry
                 };
-                path = "C:/ComtecShowApp/ICELIVE/PRIZEDRAW/" + cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
-                if (!System.IO.File.Exists(path))
-                {
-                    FileStream fs = System.IO.File.Create(path);
-                }
-                System.IO.File.WriteAllLines(path: path, contents: prizeCustData);
+                path = "C:/ComtecShowApp/ICELIVE/PRIZEDRAW/";
+                System.IO.Directory.CreateDirectory(path);
+                string ppath = cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
+                System.IO.File.WriteAllLines(path: path + ppath, contents: prizeCustData);
             }
 
-            path = "C:/ComtecShowApp/ICELIVE/SIGNUP/" + cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
-            if (!System.IO.File.Exists(path))
-            {
-                FileStream fs = System.IO.File.Create(path);
-            }
-            System.IO.File.WriteAllLines(path: path, contents: customerData);
+            path = "C:/ComtecShowApp/ICELIVE/SIGNUP/";
+            
+            System.IO.Directory.CreateDirectory(path);
+            string path2 = cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
+            System.IO.File.WriteAllLines(path: path + path2, contents: customerData);
 
 
 

@@ -3,12 +3,14 @@
 
 <head>
     <style>
+
         body {
             background-color: aliceblue;
         }
 
         div.container {
             width: 100%;
+            height: auto;
         }
 
         header, footer {
@@ -25,6 +27,11 @@
         }
 
         main {
+            width: 100%;
+        }
+
+        .container {
+            width: auto;
         }
 
         .carousel {
@@ -35,7 +42,6 @@
             display: inline;
         }
 
-
         nav {
             margin: 0;
             padding: 0;
@@ -43,14 +49,13 @@
 
         .col-md-3 {
             display: inline-grid;
+            width: 100%;
         }
 
         nav ul {
             list-style-type: none;
             padding: 0;
         }
-
-
 
             nav ul a {
                 text-decoration: none;
@@ -68,23 +73,22 @@
 
         <div class="row">
 
-            <div class="col-md-3" style="width:100%;">
+            <div class="col-md-3">
                 <ul>
                     <content>
-
-                        <section style="display:inline-flex;">
+                        <section style="display:flex; margin:auto;">
                             <br />
 
                             @using (Html.BeginForm("ComtecWeb", "Home", FormMethod.Post))
                             {
-                                <button id="Website" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="ComtecWeb()" value="Website">Comtec Catalogue</button>
+                                <button id="Website" style="background-color:#476cac; width: 550px; height:250px; resize:both; color:white;" onclick="ComtecWeb()" value="Website">Comtec Catalogue</button>
                             }
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @*@using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Post))
-                            {
-                                <button id="PrizeDraw" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="PrizeDraw()" value="Prize Draw">Prize Draw</button>
-                            }*@
-                            <img src="~/images/Nexxia/nexxia-audio-solutions-logo.png" width="550" height="250"/>
+                                {
+                                    <button id="PrizeDraw" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="PrizeDraw()" value="Prize Draw">Prize Draw</button>
+                                }*@
+                            <img src="~/images/Nexxia/nexxia-audio-solutions-logo.png" width="550" height="250" />
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
                             {
