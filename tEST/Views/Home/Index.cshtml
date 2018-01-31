@@ -8,10 +8,6 @@
             background-color: aliceblue;
         }
 
-        div.container {
-            width: 100%;
-            height: auto;
-        }
 
         header, footer {
             padding: 1em;
@@ -22,8 +18,28 @@
             align-content: center;
         }
 
+
         .buttonOfHome {
             width: 100%;
+            height:250px;
+            background-color: #476cac;
+            color: white;
+            margin: auto;
+            text-align:center;
+        }
+        .middlehome {
+            width: 100%;
+            height: 250px;
+            color: white;
+            margin: auto;
+            text-align: center;
+        }
+        .divTableRow{
+            display:inline-flex;
+            width:100%;
+        }
+        .divTable {
+            height: 250px;
         }
 
         .divider {
@@ -36,6 +52,14 @@
 
         .container {
             width: auto;
+
+        }
+        content {
+        
+            width:550px;
+            height:250px;
+            margin:auto;
+        
         }
 
         .carousel {
@@ -75,35 +99,31 @@
         @Html.Partial("_Carousel")
         <br />
 
-        <div class="row">
-
-            <div class="col-md-3">
-                <ul>
-                    <content style="display:inline-flex; position:center; margin:auto;">
-                        <br />
-
+    </div>
+        <div class="divTable">
+            <div class="divTableBody">
+                <div class="divTableRow">
+                    <content  >
                         @using (Html.BeginForm("ComtecWeb", "Home", FormMethod.Post))
                         {
-                            <button id="Website" class="buttonOfHome" style="background-color:#476cac; width: 550px; height:250px; resize:both; color:white;" onclick="ComtecWeb()" value="Website">Comtec Catalogue</button>
+                            <button id="Website" class="buttonOfHome" onclick="ComtecWeb()" value="Website">Comtec Catalogue</button>
                         }
+                    </content>
+                    <content  >
                         @*@using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Post))
                             {
                                 <button id="PrizeDraw" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="PrizeDraw()" value="Prize Draw">Prize Draw</button>
                             }*@
-                        <img class="buttonOfHome" src="~/images/Nexxia/nexxia-audio-solutions-logo.png" width="550" height="250" />
+                        <img src="~/images/Nexxia/nexxia-audio-solutions-logo.png" class="middlehome"/>
+                    </content>
+                    <content >
                         @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
                         {
-                            <button id="SignUp" class="buttonOfHome" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="SignUP()" value="Sign Up for a Catalogue!">Sign up for a catalogue</button>
+                            <button id="SignUp" class="buttonOfHome" onclick="SignUP()" value="Sign Up for a Catalogue!">Sign up for a catalogue</button>
                         }
                     </content>
-                </ul>
+                </div>
             </div>
-
         </div>
-
-    </div>
-    <main>
-
-    </main>
 </body>
 </html>

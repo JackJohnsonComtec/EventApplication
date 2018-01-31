@@ -92,13 +92,13 @@ namespace tEST.Controllers
                 "Surname: " + cust.lname,
                 "Company: " + cust.company,
                 "Email: " + cust.email,
-                "Phone Number: " + cust.phone.ToString().Trim(),
+                "Phone Number: " + "0" + cust.phone.ToString().Trim(),
                 "Industry: " + cust.industry
             };
 
-            path = "C:/ComtecShowApp/ICELIVE/PRIZEDRAW/";
+            path = "C:/ComtecShowApp/ISE/PRIZEDRAW/";
             System.IO.Directory.CreateDirectory(path);
-            string ppath = cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
+            string ppath = cust.fname + " " + cust.lname + " - " + cust.company + " ISE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
             System.IO.File.WriteAllLines(path: path + ppath, contents: customerData);
 
             ViewData["Message"] = "Thank you for Signing Up to the Prize Draw!";
@@ -223,7 +223,7 @@ namespace tEST.Controllers
                 "Surname: " + cust.lname,
                 "Company: " + cust.company,
                 "Email: " + cust.email,
-                "Phone Number: " + cust.phone.ToString().Trim(),
+                "Phone Number: " + "0" + cust.phone.ToString().Trim(),
                 "Industry: " + cust.industry
             };
             if (intFlag)
@@ -246,19 +246,19 @@ namespace tEST.Controllers
                     "Surname: " + cust.lname,
                     "Company: " + cust.company,
                     "Email: " + cust.email,
-                    "Phone Number: " + cust.phone.ToString().Trim(),
+                    "Phone Number: " + "0" + cust.phone.ToString().Trim(),
                     "Industry: " + cust.industry
                 };
-                path = "C:/ComtecShowApp/ICELIVE/PRIZEDRAW/";
+                path = "C:/ComtecShowApp/ISE/PRIZEDRAW/";
                 System.IO.Directory.CreateDirectory(path);
-                string ppath = cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
+                string ppath = cust.fname + " " + cust.lname + " - " + cust.company + " ISE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
                 System.IO.File.WriteAllLines(path: path + ppath, contents: prizeCustData);
             }
 
-            path = "C:/ComtecShowApp/ICELIVE/SIGNUP/";
+            path = "C:/ComtecShowApp/ISE/SIGNUP/";
             
             System.IO.Directory.CreateDirectory(path);
-            string path2 = cust.fname + " " + cust.lname + " - " + cust.company + " ICELIVE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
+            string path2 = cust.fname + " " + cust.lname + " - " + cust.company + " ISE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
             System.IO.File.WriteAllLines(path: path + path2, contents: customerData);
 
 
@@ -275,8 +275,8 @@ namespace tEST.Controllers
             //using (var message = new MailMessage("italerts@comtec-comms.com", email)
             //{
             //    IsBodyHtml = true,
-            //    Subject = "CometcIceLive",
-            //    Body = "Thank you " + firstname + " " + lastname + " for Signing Up To Comtec IceLive 2018! Your business is always welcome!"
+            //    Subject = "CometcISE",
+            //    Body = "Thank you " + firstname + " " + lastname + " for Signing Up To Comtec ISE 2018! Your business is always welcome!"
 
             //})
             //{
