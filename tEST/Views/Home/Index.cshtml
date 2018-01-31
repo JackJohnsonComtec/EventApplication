@@ -21,12 +21,13 @@
 
         .buttonOfHome {
             width: 100%;
-            height:250px;
+            height: 250px;
             background-color: #476cac;
             color: white;
             margin: auto;
-            text-align:center;
+            text-align: center;
         }
+
         .middlehome {
             width: 100%;
             height: 250px;
@@ -34,10 +35,12 @@
             margin: auto;
             text-align: center;
         }
-        .divTableRow{
-            display:inline-flex;
-            width:100%;
+
+        .divTableRow {
+            display: inline-flex;
+            width: 100%;
         }
+
         .divTable {
             height: 250px;
         }
@@ -52,14 +55,12 @@
 
         .container {
             width: auto;
-
         }
+
         content {
-        
-            width:550px;
-            height:250px;
-            margin:auto;
-        
+            width: 550px;
+            height: 250px;
+            margin: auto;
         }
 
         .carousel {
@@ -92,6 +93,11 @@
 </head>
 
 <body>
+    <header>
+        @{
+            ViewData["Title"] = "Home";
+        }
+    </header>
 
     <div class="container">
 
@@ -100,30 +106,30 @@
         <br />
 
     </div>
-        <div class="divTable">
-            <div class="divTableBody">
-                <div class="divTableRow">
-                    <content  >
-                        @using (Html.BeginForm("ComtecWeb", "Home", FormMethod.Post))
+    <div class="divTable">
+        <div class="divTableBody">
+            <div class="divTableRow">
+                <content>
+                    @using (Html.BeginForm("ComtecWeb", "Home", FormMethod.Post))
+                    {
+                        <button id="Website" class="buttonOfHome" onclick="ComtecWeb()" value="Website">Comtec Catalogue</button>
+                    }
+                </content>
+                <content>
+                    @*@using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Post))
                         {
-                            <button id="Website" class="buttonOfHome" onclick="ComtecWeb()" value="Website">Comtec Catalogue</button>
-                        }
-                    </content>
-                    <content  >
-                        @*@using (Html.BeginForm("PrizeDraw", "Home", FormMethod.Post))
-                            {
-                                <button id="PrizeDraw" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="PrizeDraw()" value="Prize Draw">Prize Draw</button>
-                            }*@
-                        <img src="~/images/Nexxia/nexxia-audio-solutions-logo.png" class="middlehome"/>
-                    </content>
-                    <content >
-                        @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
-                        {
-                            <button id="SignUp" class="buttonOfHome" onclick="SignUP()" value="Sign Up for a Catalogue!">Sign up for a catalogue</button>
-                        }
-                    </content>
-                </div>
+                            <button id="PrizeDraw" style="background-color:#476cac; width: 550px; height:250px; color:white;" onclick="PrizeDraw()" value="Prize Draw">Prize Draw</button>
+                        }*@
+                    <img src="~/images/Nexxia/nexxia-audio-solutions-logo.png" class="middlehome" />
+                </content>
+                <content>
+                    @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+                    {
+                        <button id="SignUp" class="buttonOfHome" onclick="SignUP()" value="Sign Up for a Catalogue!">Sign up for a catalogue</button>
+                    }
+                </content>
             </div>
         </div>
+    </div>
 </body>
 </html>

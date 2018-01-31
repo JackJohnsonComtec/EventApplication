@@ -14,7 +14,7 @@ namespace tEST.Controllers
 {
     public class HomeController : Controller
     {
-        
+
         DataColOptions dco = new DataColOptions();
 
 
@@ -256,7 +256,7 @@ namespace tEST.Controllers
             }
 
             path = "C:/ComtecShowApp/ISE/SIGNUP/";
-            
+
             System.IO.Directory.CreateDirectory(path);
             string path2 = cust.fname + " " + cust.lname + " - " + cust.company + " ISE " + DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + ".txt";
             System.IO.File.WriteAllLines(path: path + path2, contents: customerData);
